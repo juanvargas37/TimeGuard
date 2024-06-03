@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TimeGuard Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            background-color: #363430; /* Dark grey background */
+            color: #E5E5E5; /* Light grey text for better contrast */
+        }
+
+        header {
+            background-color: #C5AF9D;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            header img {
+                height: 40px;
+                margin-right: 10px;
+            }
+
+            header span {
+                font-weight: bold;
+                font-size: 1.5em;
+            }
+
+        input, button, select {
+            margin: 5px 5px 5px 0; /* Adjust margin for spacing between elements */
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #4A4845; /* Slightly lighter grey for input boxes */
+            color: #E5E5E5; /* Light grey text */
+        }
+
+        button {
+            background-color: #C5AF9D;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px; /* Add some top margin */
+        }
+
+            button:hover {
+                background-color: #B09484; /* Slightly darker shade for hover effect */
+            }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #4A4845; /* Match list items with input boxes */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .list-item-content {
+            display: flex;
+            align-items: center;
+        }
+
+            .list-item-content span {
+                margin-right: 10px;
+            }
+
+        li button {
+            background-color: #C5AF9D;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 2px 5px;
+        }
+
+            li button:hover {
+                background-color: #B09484;
+            }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Add some space below the input row */
+        }
+
+            .input-container input#siteInput {
+                width: 200px; /* Adjust width for the website URL input */
+                margin-right: 10px;
+            }
+
+            .input-container input#timerInput {
+                width: 60px; /* Adjust width for the timer duration input */
+                margin-right: 10px;
+            }
+
+            .input-container select#timerUnit {
+                width: 100px; /* Adjust width for the timer unit select */
+                margin-right: 10px;
+            }
+
+            .input-container input::-webkit-outer-spin-button,
+            .input-container input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            .input-container input[type=number] {
+                -moz-appearance: textfield;
+            }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="icons/icon128.png" alt="TimeGuard Logo">
+        <span>TimeGuard</span>
+    </header>
+    <div style="padding: 20px;">
+        <div class="input-container">
+            <input id="siteInput" type="text" placeholder="Enter website URL" />
+            <input id="timerInput" type="number" placeholder="Duration" min="0" />
+            <select id="timerUnit">
+                <option value="seconds">Seconds</option>
+                <option value="minutes">Minutes</option>
+                <option value="hours">Hours</option>
+            </select>
+            <button id="addSiteButton">Block</button>
+        </div>
+        <div id="errorMessage" class="error-message" style="display:none;"></div>
+        <ul id="blockedSitesList"></ul>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

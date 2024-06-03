@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TimeGuard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            background-color: #363430; /* Dark grey background */
+            color: #E5E5E5; /* Light grey text for better contrast */
+        }
+
+        header {
+            background-color: #C5AF9D;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            header img {
+                height: 30px;
+                margin-right: 10px;
+            }
+
+            header span {
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+
+        ul {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+            max-height: 200px; /* Limit height to allow scroll */
+            overflow-y: auto; /* Enable vertical scroll */
+            border-top: 1px solid #E5E5E5;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 5px 0;
+            padding: 5px;
+            background-color: #4A4845; /* Match list items with input boxes */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .list-item-content {
+            display: flex;
+            align-items: center;
+        }
+
+            .list-item-content span {
+                margin-right: 10px;
+            }
+
+        li button {
+            background-color: #C5AF9D;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 2px 5px;
+        }
+
+            li button:hover {
+                background-color: #B09484;
+            }
+
+        .options-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #C5AF9D;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+            .options-button:hover {
+                background-color: #B09484;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="icons/icon128.png" alt="TimeGuard Logo">
+        <span>TimeGuard</span>
+    </header>
+    <ul id="blockedSitesList"></ul>
+    <button class="options-button" id="optionsButton">Options</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>
